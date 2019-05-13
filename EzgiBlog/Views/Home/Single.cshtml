@@ -1,0 +1,25 @@
+﻿@model EzgiBlog.Data.DTO.SingleDTO
+@{
+    ViewBag.Title = "Single";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="single-grid">
+    <img src="~/Content/images/post1.jpg" alt="">
+    <div class="about-grid">
+                <table class=" post-info">
+
+                    <tbody>
+                        <tr>
+                            <td>@Model.Text</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            
+
+    </div>
+   
+    @Html.Partial("Comment", new EzgiBlog.Data.DTO.CommentDTO())
+
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model EzgiBlog.Data.DTO.CommentDTO
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="contact-info">
+    <h2>CONTACT</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Contrary to popular belief.</p>
+</div><br />
+@Html.ValidationSummary()
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Name)<br />
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Name)<br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Email)<br />
+        @Html.TextBoxFor(c => c.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Email)<br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Phone)<br />
+        @Html.TextBoxFor(c => c.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Phone)<br />
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Message)<br />
+        @Html.TextAreaFor(c => c.Message, new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Message)<br />
+    </div>
+    @Html.HiddenFor(c => c.Id)
+    <button type="submit" class="btn btn-default">Send</button>
+}
+<div class="col-md-6 company_address">
+    <h4>GET IN TOUCH</h4>
+    <p>500 Lorem Ipsum Dolor Sit,</p>
+    <p>22-56-2-9 Sit Amet, Lorem,</p>
+    <p>USA</p>
+    <p>Phone:(00) 222 666 444</p>
+    <p>Fax: (000) 123 456 78 0</p>
+    <p>Email: <a href="mailto:info@ezgib.com">info@mycompany.com</a></p>
+</div>

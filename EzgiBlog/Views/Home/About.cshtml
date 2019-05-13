@@ -1,0 +1,33 @@
+﻿@model List<EzgiBlog.Data.DTO.PostDTO>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="about-grid">
+
+
+    @foreach (var item in Model)
+    {
+        <h3>@item.Title</h3>
+        <table class="about-content">
+
+            <tbody>
+                <tr>
+
+                    <td>@item.Post1</td>
+
+
+                </tr>
+
+            </tbody>
+        </table><br />
+    }
+
+    <div class="man-pic">
+        <img src="~/Content/images/man.jpg" alt="">
+    </div>
+
+</div>
+

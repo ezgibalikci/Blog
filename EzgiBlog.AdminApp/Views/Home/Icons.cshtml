@@ -1,0 +1,25 @@
+﻿@model EzgiBlog.Data.DTO.PostDTO
+
+@{
+    ViewBag.Title = "Icons";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="contact-info">
+    <h2>POST</h2>
+</div><br />
+@Html.ValidationSummary()
+@using (Html.BeginForm("Icons", "Home", FormMethod.Post))
+{
+      <div class="form-group">
+          @Html.LabelFor(c => c.Title)<br />
+          @Html.TextBoxFor(c => c.Title, new { @class = "form-control", @required = "true" })
+          @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })<br />
+      </div>
+      <div class="form-group">
+          @Html.LabelFor(c => c.Post1)<br />
+          @Html.TextAreaFor(c => c.Post1, new { @class = "form-control", @required = "true" })
+          @Html.ValidationMessageFor(x => x.Post1, "", new { @style = "color:red" })<br />
+      </div>
+    @Html.HiddenFor(c => c.Id)
+    <button type="submit" class="btn btn-default">Send</button>
+}

@@ -1,0 +1,10 @@
+﻿@model List<EzgiBlog.Data.DTO.PostDTO>
+<div class="recent">
+    <h3>RECENT POSTS</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="/Home/About">@item.Title</a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,85 @@
+﻿@model  EzgiBlog.Data.DTO.UserDTO
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("New", "User", FormMethod.Post))
+{
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">New Profile</h4>
+            </div> <br />
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        @Html.ValidationSummary()
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Username</label>
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.UserName)
+                            </div> <br />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Email address</label>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.Email)
+                            </div> <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Fist Name</label>
+                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.FirstName)
+                            </div> <br />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Last Name</label>
+                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.LastName)
+                            </div> <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Adress</label>
+                                @Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.Adress)
+                            </div> <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Phone</label>
+                                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.Phone)
+                            </div> <br />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group bmd-form-group">
+                                <label class="bmd-label-floating">Password</label>
+                                @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(u => u.Password)
+                            </div> <br />
+                        </div>
+                    </div>
+                    @Html.HiddenFor(u => u.UserId)
+                    <button type="submit" class="btn btn-primary pull-right">Create</button>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+}

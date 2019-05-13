@@ -1,0 +1,44 @@
+﻿<div class="header">
+
+    <div class="logo">
+        <a href="/Home/Index"><img src="~/Content/images/logo.png" title="" /></a>
+    </div>
+    <!---start-top-nav---->
+  
+    <div class="top-menu">
+
+        <div>
+            <div id="search">
+                <form method="get" class="searchform themeform" action="/Home/Search">
+                    <div id="search-area">
+                        <input type="text" class="search-text" name="search" />
+                    </div>
+                    <div id="search-button">
+                        <input type="submit" class="search-button" value="Ara" />
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <span class="menu"> </span>
+        <ul>
+            <li class="active"><a href="/Home/Index">HOME</a></li>
+            <li><a href="/Home/About">ABOUT</a></li>
+            <li><a href="/Home/Contact">CONTACT</a></li>
+            <li style="height:20px;" class="blue"><a href="/Home/SignUp" title="SignUp">&nbsp;&nbsp;&nbsp;<i class="icon-asterisk"></i>&nbsp;SİGN UP</a></li>
+            <li style="height:20px;" class="purple"><a href="/Home/Giris" title="Giris">&nbsp;&nbsp;&nbsp;<i class="icon-unlock"></i>&nbsp;LOGİN</a></li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+
+    <script>
+        $("span.menu").click(function () {
+            $(".top-menu ul").slideToggle("slow", function () {
+            });
+        });
+    </script>
+    <!---//End-top-nav---->
+</div>
+
+

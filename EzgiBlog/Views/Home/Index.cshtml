@@ -1,0 +1,66 @@
+﻿
+@model EzgiBlog.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-grids">
+    <div class="col-md-8 content-main">
+        <div class="content-grid">
+            <div class="content-grid-info">
+
+                <img src="~/Content/images/post1.jpg" alt="">
+                <div class="post-info">
+                    <h4><a href="/Home/Single">MVC Nedir?</a>  July 30, 2014 / 27 Comments</h4>
+                    <p>MVC, başlıkta da belirttiğim gibi Model, View ve Controller kelimelerinden oluşturulmuş bir yazılım geliştirme desenidir.</p>
+                    <a href="/Home/Single/1"><span></span>READ MORE</a>
+                </div>
+            </div>
+            <div class="content-grid-info">
+                <img src="~/Content/images/post2.jpg" alt="">
+                <div class="post-info">
+                    <h4><a href="/Home/Single">  Neden ASP.NET MVC tercih etmeliyim?</a>  July 30, 2014 / 27 Comments</h4>
+                    <p>
+                        MVC ile istemci’nin isteğine karşılık üretilen çıktı üzerinde çok büyük kontrol imkanı vardır. 
+                    </p>
+                    <a href="/Home/Single/3"><span></span>READ MORE</a>
+                </div>
+            </div>
+            <div class="content-grid-info">
+                <img src="~/Content/images/post3.jpg" alt="">
+                <div class="post-info">
+                    <h4><a href="/Home/Single">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
+                    <p>MVC Örnekleri</p>
+                    <a href="/Home/Single/4"><span></span>READ MORE</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-4 content-right">
+        @Html.Partial("RecentPost",Model.Posts)
+        <div class="comments">
+            <h3>RECENT COMMENTS</h3>
+            <ul>
+                @foreach (var item in Model.Comment)
+                {
+
+                    <li><a href="/Home/Index">@item.Name</a></li>
+                }
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="categories">
+            <h3>CATEGORIES</h3>
+            <ul>
+                <li><a href="/Home/Single">Vivamus vestibulum nulla</a></li>
+                <li><a href="#">Integer vitae libero ac risus e</a></li>
+                <li><a href="#">Vestibulum commo</a></li>
+                <li><a href="#">Cras iaculis ultricies</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+</div>

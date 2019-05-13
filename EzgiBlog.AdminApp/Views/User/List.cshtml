@@ -1,0 +1,60 @@
+﻿@model List<EzgiBlog.Data.DTO.UserDTO>
+
+@{
+
+
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title ">User Table</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>UserName</th>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Email</th>
+                                <th>Adress</th>
+                                <th>Phone</th>
+                                <th>Password</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            @foreach (var UserDTO in Model)
+                            {
+                                <tr>
+                                    <td>@UserDTO.UserId</td>
+                                    <td>@UserDTO.UserName</td>
+                                    <td>@UserDTO.FirstName</td>
+                                    <td>@UserDTO.LastName</td>
+                                    <td>@UserDTO.Email</td>
+                                    <td>@UserDTO.Adress</td>
+                                    <td>@UserDTO.Phone</td>
+                                    <td>@UserDTO.Password</td>
+                                    <td>@Html.ActionLink("Update", "Edit", new { id = UserDTO.UserId }, new { @class = "btn btn-success" })</td>
+                                    <td>@Html.ActionLink("Delete", "Delete", new { id = UserDTO.UserId }, new { @class = "btn btn-danger" })</td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
